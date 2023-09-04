@@ -14,8 +14,8 @@ module "redis" {
   family               = "C"
   capacity             = 0
   sku_name             = "Basic"
-  virtual_network_name = ""
-  subnet_id            = ""
-  private_dns_zone_id  = ""
+  virtual_network_name = "my-net-name"
+  subnet_id            = "my-snet-id"
+  private_dns_zone_id  = "my-priv-dns-id"
 }
 ```
