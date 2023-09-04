@@ -71,7 +71,8 @@ variable "patch_schedules" {
   default = [
     {
       day_of_week        = "Sunday"
-      maintenance_window = "1"
+      maintenance_window = "PT3H"
+      start_hour_utc     = "1"
     }
   ]
   nullable = false
