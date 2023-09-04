@@ -49,11 +49,6 @@ variable "minimum_tls_version" {
   default     = "1.2"
 }
 
-variable "virtual_network_name" {
-  description = "Virtual Network Name for Private Dns Zone"
-  type        = string
-}
-
 variable "subnet_id" {
   description = "Subnet ID"
   type        = string
