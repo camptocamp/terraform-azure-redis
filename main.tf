@@ -13,9 +13,13 @@ resource "azurerm_redis_cache" "this" {
   shard_count                   = var.sku_name == "Premium" ? var.cluster_shard_count : 0
   tags                          = var.tags
   zones                         = var.zones
-  patch_schedule {
-    day_of_week    = "Sunday"
-    start_hour_utc = 1
+  dynamic "patch_schedule" {
+    for_each = var.patch_schedules
+    content {
+      day_of_week        = patch_schedule.value.day_of_week
+      start_hour_utc     = patch_schedule.value.start_hour_utc
+      maintenance_window = patch_schedule.value.maintenance_window
+    }
   }
 }
 
