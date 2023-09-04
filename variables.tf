@@ -72,8 +72,13 @@ variable "private_dns_zone_id" {
 
 variable "patch_schedules" {
   description = "A list of Patch Schedule, Azure Cache for Redis patch schedule is used to install important software updates in specified time window."
-  default     = []
-  nullable    = false
+  default = [
+    {
+      day_of_week        = "Sunday"
+      maintenance_window = "1"
+    }
+  ]
+  nullable = false
   type = list(object({
     day_of_week        = string
     start_hour_utc     = optional(string)
