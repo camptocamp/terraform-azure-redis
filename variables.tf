@@ -59,11 +59,7 @@ variable "subnet_id" {
   type        = string
 
 }
-variable "private_dns_zone_name" {
-  description = "The name of the private dns zone"
-  type        = string
-  default     = ""
-}
+
 
 variable "private_dns_zone_id" {
   description = "The id of the private dns zone"
