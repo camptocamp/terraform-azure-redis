@@ -66,7 +66,7 @@ variable "patch_schedules" {
   default = [
     {
       day_of_week        = "Sunday"
-      maintenance_window = "PT3H"
+      maintenance_window = "PT5H"
       start_hour_utc     = "1"
     }
   ]
