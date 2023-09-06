@@ -28,6 +28,28 @@ resource "azurerm_redis_cache" "this" {
       maintenance_window = patch_schedule.value.maintenance_window
     }
   }
+  dynamic "redis_configuration" {
+    for_each = var.redis_configuration == null ? [] : [var.redis_configuration]
+    content {
+      aof_backup_enabled              = redis_configuration.value.aof_backup_enabled
+      aof_storage_connection_string_0 = redis_configuration.value.aof_storage_connection_string_0
+      aof_storage_connection_string_1 = redis_configuration.value.aof_storage_connection_string_1
+      enable_authentication           = redis_configuration.value.enable_authentication
+      maxmemory_reserved              = redis_configuration.value.maxmemory_reserved
+      maxmemory_delta                 = redis_configuration.value.maxmemory_delta
+      maxmemory_policy                = redis_configuration.value.maxmemory_policy
+      maxfragmentationmemory_reserved = redis_configuration.value.maxfragmentationmemory_reserved
+      rdb_backup_enabled              = redis_configuration.value.rdb_backup_enabled
+      rdb_backup_frequency            = redis_configuration.value.rdb_backup_frequency
+      rdb_backup_max_snapshot_count   = redis_configuration.value.rdb_backup_max_snapshot_count
+      rdb_storage_connection_string   = redis_configuration.value.rdb_storage_connection_string
+      notify_keyspace_events          = redis_configuration.value.notify_keyspace_events
+    }
+  }
+
+  lifecycle {
+    ignore_changes = [redis_configuration[0].rdb_storage_connection_string]
+  }
 }
 
 resource "azurerm_private_endpoint" "this" {
