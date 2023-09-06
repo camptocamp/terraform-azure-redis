@@ -13,6 +13,13 @@ resource "azurerm_redis_cache" "this" {
   shard_count                   = var.sku_name == "Premium" ? var.cluster_shard_count : 0
   tags                          = var.tags
   zones                         = var.zones
+  dynamic "identity" {
+    for_each = var.identities
+    content {
+      type         = identity.value.type
+      identity_ids = identity.value.identity_ids
+    }
+  }
   dynamic "patch_schedule" {
     for_each = var.patch_schedules
     content {

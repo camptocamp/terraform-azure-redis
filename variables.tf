@@ -55,10 +55,19 @@ variable "subnet_id" {
 
 }
 
-
 variable "private_dns_zone_id" {
   description = "The id of the private dns zone"
   type        = string
+}
+
+variable "identities" {
+  description = "A list of Azure identites. Specifies the type of Managed Service Identity that should be configured on this Redis Cluster. Possible values are SystemAssigned, UserAssigned, SystemAssigned, UserAssigned (to enable both)."
+  default     = null
+  nullable    = true
+  type = list(object({
+    type         = string
+    identity_ids = optional(list(string))
+  }))
 }
 
 variable "patch_schedules" {
