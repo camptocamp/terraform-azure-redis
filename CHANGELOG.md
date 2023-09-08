@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.0.0...v1.1.0) (2023-09-08)
+
+
+### Features
+
+* **redis:** Permit to use azure identites ([9d74526](https://github.com/camptocamp/terraform-azure-redis/commit/9d745261fec8a39ed01f0b640f6d4a8d94c1a962))
+* **redis:** Permit to use persistante data ([0e6aa8c](https://github.com/camptocamp/terraform-azure-redis/commit/0e6aa8c46ecb0ce1c6837558f800c0ad03f8fdee))
+
 ## 1.0.0 (2023-09-04)
 
 
