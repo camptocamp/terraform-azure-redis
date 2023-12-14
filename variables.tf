@@ -76,7 +76,7 @@ variable "patch_schedules" {
     {
       day_of_week        = "Sunday"
       maintenance_window = "PT5H"
-      start_hour_utc     = "1"
+      start_hour_utc     = "23"
     }
   ]
   nullable = false
