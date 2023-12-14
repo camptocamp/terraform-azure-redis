@@ -14,7 +14,7 @@ resource "azurerm_redis_cache" "this" {
   tags                          = var.tags
   zones                         = var.zones
   dynamic "identity" {
-    for_each = var.identities
+    for_each = var.identities == null ? [] : var.identities
     content {
       type         = identity.value.type
       identity_ids = identity.value.identity_ids
