@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/camptocamp/terraform-azure-redis/compare/v1.1.0...v1.1.1) (2023-12-19)
+
+
+### Bug Fixes
+
+* **identity:** permit to not use identity ([7754645](https://github.com/camptocamp/terraform-azure-redis/commit/77546459f82f208cbb7e9bbd0278aee225c5d34e))
+
 ## [1.1.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.0.0...v1.1.0) (2023-09-08)
 
 
