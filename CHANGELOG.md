@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.1.1...v1.2.0) (2024-04-10)
+
+
+### Features
+
+* **network:** output private hostname ([14004e8](https://github.com/camptocamp/terraform-azure-redis/commit/14004e8eeb212a8778a2a3b4bd42f6bbd6e1da1b))
+* **output:** add private primary connection output ([2bc71e7](https://github.com/camptocamp/terraform-azure-redis/commit/2bc71e7d524047164dacbc01bb517bdcd14f167c))
+
 ## [1.1.1](https://github.com/camptocamp/terraform-azure-redis/compare/v1.1.0...v1.1.1) (2023-12-19)
 
 
