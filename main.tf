@@ -1,3 +1,14 @@
+locals {
+  private_hostname = replace(azurerm_redis_cache.this.hostname, ".redis.cache.windows.net", ".privatelink.redis.cache.windows.net")
+  redis_secrets = {
+    "redis-hostname"                        = local.private_hostname
+    "redis-ssl-port"                        = azurerm_redis_cache.this.ssl_port
+    "redis-primary-access-key"              = azurerm_redis_cache.this.primary_connection_string
+    "redis-primary-connection-url"          = format("rediss://%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
+    "redis-username-primary-connection-url" = format("rediss://default:%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
+  }
+}
+
 # NOTE: the Name used for Redis needs to be globally unique
 resource "azurerm_redis_cache" "this" {
   name                          = var.name
@@ -80,4 +91,18 @@ resource "azurerm_management_lock" "this" {
   scope      = azurerm_redis_cache.this.id
   lock_level = "CanNotDelete"
   notes      = "This is a security mechanism to prevent accidental deletion. Deleting a redis instance drops all keys and also backups."
+}
+
+resource "azurerm_key_vault_secret" "keys" {
+  for_each     = local.redis_secrets
+  name         = replace(each.key, "_", "-")
+  value        = each.value
+  key_vault_id = var.key_vault_id
+
+  lifecycle {
+    ignore_changes = [
+      tags,
+      value,
+    ]
+  }
 }

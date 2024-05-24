@@ -125,3 +125,9 @@ variable "redis_configuration" {
   nullable = true
   default  = null
 }
+
+variable "key_vault_id" {
+  description = "The ID of the Key Vault to use for encryption."
+  type        = string
+}
+
