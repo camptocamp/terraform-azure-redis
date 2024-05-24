@@ -22,5 +22,5 @@ output "primary_connection_string" {
 
 
 output "private_hostname" {
-  value = replace(azurerm_redis_cache.this.hostname, ".redis.cache.windows.net", ".privatelink.redis.cache.windows.net")
+  value = local.private_hostname
 }
