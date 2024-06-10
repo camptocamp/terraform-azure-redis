@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.2.0...v1.3.0) (2024-06-10)
+
+
+### Features
+
+* **keyvault:** permit to put secrets on azure keyvault ([d348dc6](https://github.com/camptocamp/terraform-azure-redis/commit/d348dc6603a2327858a886ed10fdcf51f32031cb))
+
 ## [1.2.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.1.1...v1.2.0) (2024-04-10)
 
 
