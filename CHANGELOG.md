@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/camptocamp/terraform-azure-redis/compare/v1.3.0...v1.3.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* **secrets:** wrong primary-access-key value ([fc2b8ab](https://github.com/camptocamp/terraform-azure-redis/commit/fc2b8abe0f1406a6231a98e40d8df65bc2599c17))
+
 ## [1.3.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.2.0...v1.3.0) (2024-06-10)
 
 
