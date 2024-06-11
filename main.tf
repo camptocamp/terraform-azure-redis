@@ -3,7 +3,7 @@ locals {
   redis_secrets = {
     "redis-hostname"                        = local.private_hostname
     "redis-ssl-port"                        = azurerm_redis_cache.this.ssl_port
-    "redis-primary-access-key"              = azurerm_redis_cache.this.primary_connection_string
+    "redis-primary-access-key"              = azurerm_redis_cache.this.primary_access_key
     "redis-primary-connection-url"          = format("rediss://%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
     "redis-username-primary-connection-url" = format("rediss://default:%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
   }
@@ -102,7 +102,6 @@ resource "azurerm_key_vault_secret" "keys" {
   lifecycle {
     ignore_changes = [
       tags,
-      value,
     ]
   }
 }
