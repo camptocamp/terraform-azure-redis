@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/camptocamp/terraform-azure-redis/compare/v1.3.1...v1.3.2) (2024-06-19)
+
+
+### Bug Fixes
+
+* **redis:** wrong secret connection string ([50e690a](https://github.com/camptocamp/terraform-azure-redis/commit/50e690afc2472640ecafd5f53152acf67aea1b1c))
+
 ## [1.3.1](https://github.com/camptocamp/terraform-azure-redis/compare/v1.3.0...v1.3.1) (2024-06-11)
 
 
