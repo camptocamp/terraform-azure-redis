@@ -4,8 +4,8 @@ locals {
     "redis-hostname"                        = local.private_hostname
     "redis-ssl-port"                        = azurerm_redis_cache.this.ssl_port
     "redis-primary-access-key"              = azurerm_redis_cache.this.primary_access_key
-    "redis-primary-connection-url"          = format("rediss://%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
-    "redis-username-primary-connection-url" = format("rediss://default:%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_connection_string, local.private_hostname, azurerm_redis_cache.this.ssl_port)
+    "redis-primary-connection-url"          = format("rediss://%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_access_key, local.private_hostname, azurerm_redis_cache.this.ssl_port)
+    "redis-username-primary-connection-url" = format("rediss://default:%s@%s:%s/0?ssl_cert_reqs=required", azurerm_redis_cache.this.primary_access_key, local.private_hostname, azurerm_redis_cache.this.ssl_port)
   }
 }
 
