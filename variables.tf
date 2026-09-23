@@ -111,7 +111,7 @@ variable "redis_configuration" {
     aof_backup_enabled              = optional(bool)
     aof_storage_connection_string_0 = optional(string)
     aof_storage_connection_string_1 = optional(string)
-    enable_authentication           = optional(bool)
+    authentication_enabled          = optional(bool)
     maxmemory_reserved              = optional(number)
     maxmemory_delta                 = optional(number)
     maxmemory_policy                = optional(string)
@@ -130,4 +130,3 @@ variable "key_vault_id" {
   description = "The ID of the Key Vault to use for encryption."
   type        = string
 }
-
