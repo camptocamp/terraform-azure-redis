@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/camptocamp/terraform-azure-redis/compare/v1.3.2...v1.4.0) (2026-10-26)
+
+
+### Features
+
+* updated code to compatible azurerm v4 ([f136013](https://github.com/camptocamp/terraform-azure-redis/commit/f136013fb93b23659f1e5cfff917cdf86a00831e))
+
 ## [1.3.2](https://github.com/camptocamp/terraform-azure-redis/compare/v1.3.1...v1.3.2) (2024-06-19)
 
 
